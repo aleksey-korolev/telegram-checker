@@ -5,11 +5,13 @@ Steps to setup your own bot and backend for it:
 1. Register new telegram bot using Telegram official bot father bot: https://t.me/botfather. Make note of the returned token.
 2. Create a Google spreadsheet that will keep list of ids as well as a web application to process requests from your bot.
 3. Rename 1st sheet to "Ids" and set cell A1 value to "Id" - 1st row will be the header row.
-4. Fill 1st column with ids of telegram channels and groups that need to be detected by bot starting with cell A2. Following Google sheets can be used as an example: https://docs.google.com/spreadsheets/d/1zLvR4VqrmqpwWkZoqZsTh1FvvS88bvvy00QqHU0KNXQ
-5. Create an App Script bound to the created spreadsheet: select Extensions > Apps Script and paste App Script code from bot-backend.js. More on App Script: https://developers.google.com/apps-script/guides/sheets
-6. Set token value obtained when registering the bot to var "token" in the script.
-7. Deploy the App Script using Deploy button. Note the URL of deployed web application - this is your bot backend.
-8. Register backend url as bot webhook by sending following request: https://api.telegram.org/bot{token}/setWebhook?url={backend url}
+4. Fill 1st column with ids of telegram channels and groups that need to be detected by bot starting with cell A2.
+5. Add 2nd sheet named "Configuration" with configuration parameters name-value pairs.
+Following Google sheets can be used as an example: https://docs.google.com/spreadsheets/d/1zLvR4VqrmqpwWkZoqZsTh1FvvS88bvvy00QqHU0KNXQ
+7. Create an App Script bound to the created spreadsheet: select Extensions > Apps Script and paste App Script code from bot-backend.js. More on App Script: https://developers.google.com/apps-script/guides/sheets
+8. Set token value obtained when registering the bot to var "token" in the script.
+9. Deploy the App Script using Deploy button. Note the URL of deployed web application - this is your bot backend.
+10. Register backend url as bot webhook by sending following request: https://api.telegram.org/bot{token}/setWebhook?url={backend url}
 
 Check your bot:
 1. Check that webhook was set https://api.telegram.org/bot{token}/getWebhookInfo
