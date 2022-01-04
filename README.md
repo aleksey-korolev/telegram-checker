@@ -8,6 +8,8 @@ Steps to setup your own bot and backend for it:
 4. Fill 1st column with ids of telegram channels and groups that need to be detected by bot starting with cell A2.
 5. Add 2nd sheet named "Configuration" with configuration parameters name-value pairs.
 Following Google sheets can be used as an example: https://docs.google.com/spreadsheets/d/1zLvR4VqrmqpwWkZoqZsTh1FvvS88bvvy00QqHU0KNXQ
+6. Add 3rd sheet named "Suggestions" with configuration parameters query_id-from_username-channel_id-channel_username-action-status pairs.
+7. Add 4th sheet named "Log" without configuration parameters
 7. Create an App Script bound to the created spreadsheet: select Extensions > Apps Script and paste App Script code from bot-backend.js. More on App Script: https://developers.google.com/apps-script/guides/sheets
 8. Set token value obtained when registering the bot to var "token" in the script.
 9. Deploy the App Script using Deploy button. Note the URL of deployed web application - this is your bot backend.
